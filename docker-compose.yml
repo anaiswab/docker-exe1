@@ -7,18 +7,9 @@ networks:
 services:
   todoapplication:
       hostname: todo
-      build: .
       ports:
         - 32500:5000
-      links:
-        - db:postgres
-      depends_on:
-        - db
-      volumes:
-        - ./sql:/tmp
-      networks:
-        -  lan_network
-
+      image : alpine
   pgadmin:
     hostname: pgadmin
     image: dpage/pgadmin4
